@@ -25,12 +25,12 @@ const MessageForm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault(); // stop the page from refreshing
 
-        const text = value.trim();
+        // Concatenate the value with data when sending the message
+        const text = `${value.trim()} ${data.tokenSymbol} ${data.walletAddress} ${data.tokenAmount}`.trim();
 
         if (text.length > 0) {
         sendMessage(creds, chatId, { text });
         }
-
         setValue('');
     };
 
@@ -43,7 +43,7 @@ const MessageForm = (props) => {
             <input
                 className="message-input"
                 placeholder="Send a message..."
-                value={data.tokenSymbol + " " + data.walletAddress + " " + data.tokenAmount}
+                value={value}
                 onChange={handleChange}
                 onSubmit={handleSubmit}
             />

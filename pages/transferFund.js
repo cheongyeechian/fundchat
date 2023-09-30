@@ -3,14 +3,19 @@ import Link from "next/link";
 import { useAppContext } from './_app.js';
 import React, { useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import { useConnection, useWallet, useAnchorWallet } from '@solana/wallet-adapter-react';
+import { useWalletTokenBalance } from '@lndgalante/solutils';
+
 
 const TransferFund = () => {
-
+    const { publicKey } = useWallet(); // Get the public key of the connected wallet
     const [query, setQuery] = useState(''); // To store user input
     const [tokenData, setTokenData] = useState(null); // To store fetched token data
     const [loading, setLoading] = useState(false); // To handle loading state
     const [amount, setAmount] = useState(''); // To store user input
     const { setData } = useAppContext();
+    const [address, setAddress] = useState(''); // To store user input
+    const connection = useConnection(); // make sure to import and use connection if required in the sendSOLToSpecificAddress function
 
 
     const handleSearch = async () => {
@@ -47,7 +52,7 @@ const TransferFund = () => {
         }
         
 
-        setData({tokenSymbol: targetCoin.symbol, walletAddress: "GEfMBVX9gKqMNJRUArmHDrAb7uNFqQRxQLvYBnK7YqGh", tokenAmount: amount});
+        setData({tokenSymbol: targetCoin.symbol, walletAddress: address, tokenAmount: amount});
 
         } catch (error) {
         console.error("Error occurred while fetching token data", error);
@@ -88,6 +93,7 @@ const TransferFund = () => {
                 className='btn-gradient-border h-14 w-3/6 bg-gray-800 ml-96 mt-2 text-white'
                 type="text"
                 placeholder="Wallet Address"
+                onChange={(e) => setAddress(e.target.value)}
             />
             <Link href="/chatroom">
                 <button onClick={handleSearch} className='text-white btn-gradient-border'>Send Transfer Fund Message</button>
