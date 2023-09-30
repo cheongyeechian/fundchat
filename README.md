@@ -1,5 +1,5 @@
 
-## FundChat
+## 🎉FundChat🎉
 **A place For You To Chat Before You Make Transaction**
 ```bash
 npm run dev
@@ -11,7 +11,7 @@ pnpm dev
 bun dev
 ```
 
-❔Problem Statement❔: People always send wrong funds to the wrong account, so before they transfer fund, they will transfer some little funds 
+❓Problem Statement❓: People always send wrong funds to the wrong account, so before they transfer fund, they will transfer some little funds 
                     first. But Its so inconvenient to transfer money twice.
                     
 💡Solution💡: Send msg request to the address first, before you send funds.  
