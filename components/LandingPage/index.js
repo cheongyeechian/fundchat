@@ -23,7 +23,7 @@ export function LandingPage() {
                     </div>
                     <div className="row-start-2">
                         <span className='text-gradient ml-32 font-bold'>FundChat</span>
-                        <p className='flex text-white ml-32 text-[30px] font-sans '>A Place For You to<span className="text-gradient-short-word text-glow px-3 font-bold"> Chat</span> Before You <span className="text-gradient-short-word text-glow px-3 font-bold">Pay</span> $ </p>
+                        <p className='flex text-white ml-32 text-[30px] font-sans '>A Place For You to<span className="text-gradient-short-word text-glow px-3 font-bold"> Chat</span> Before You <span className="text-gradient-short-word text-glow px-3 font-bold">Make Transaction</span> $ </p>
                     </div>
                     <div className="ml-32 p-4 text-[25px]">
                         <Link href="/chatroom">
