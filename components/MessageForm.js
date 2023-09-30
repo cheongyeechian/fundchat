@@ -2,11 +2,15 @@ import { useState } from 'react';
 import { SendOutlined, PictureOutlined } from '@ant-design/icons';
 import { sendMessage, isTyping } from 'react-chat-engine';
 import { useRouter } from 'next/router'
+import { useAppContext } from '../pages/_app.js';
+
 
 const MessageForm = (props) => {
     const [value, setValue] = useState('');
     const { chatId, creds } = props;
     const router = useRouter();
+    const { data } = useAppContext();
+
 
     const handleTransferClick = () => {
         router.push('/transferFund'); // Navigate to TransferFund page when the button is clicked
@@ -39,7 +43,7 @@ const MessageForm = (props) => {
             <input
                 className="message-input"
                 placeholder="Send a message..."
-                value={value}
+                value={data.tokenSymbol + " " + data.walletAddress + " " + data.tokenAmount}
                 onChange={handleChange}
                 onSubmit={handleSubmit}
             />
