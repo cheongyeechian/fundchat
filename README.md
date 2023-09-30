@@ -1,5 +1,5 @@
 
-## 🎉FundChat🎉
+## 💭FundChat💭
 **A place For You To Chat Before You Make Transaction**
 ```bash
 npm run dev
@@ -16,7 +16,7 @@ bun dev
                     
 💡Solution💡: Send msg request to the address first, before you send funds.  
 
-💭What we do💭: A platform to chat and transfer fund to all Solana address.
+🤔What we do🤔: A platform to chat and transfer fund to all Solana address.
 
 ## 📺Pitch Deck📺
 Click this link: https://www.canva.com/design/DAFv4o93iJc/OmUz_QsVMuL9IwJlnFjMzA/edit?utm_content=DAFv4o93iJc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
